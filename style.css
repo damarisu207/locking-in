@@ -1,0 +1,357 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ============ PAGE ============ */
+
+body{
+    padding: 40px;
+    font-family: 'Fredoka', 'Comic Sans MS', 'Trebuchet MS', sans-serif;
+    color: #2b1b4a;
+    min-height: 100vh;
+    background: linear-gradient(120deg, #ffd6e8, #fff3b0, #c8f7dc, #c9e4ff, #e5d0ff, #ffd6e8);
+    background-size: 400% 400%;
+    animation: bg-shift 16s ease infinite;
+    overflow-x: hidden;
+}
+
+@keyframes bg-shift {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ============ INTRO ============ */
+
+#intro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto 60px;
+}
+
+#intro-text {
+    flex: 1;
+    background: #fff;
+    border: 4px solid #2b1b4a;
+    border-radius: 24px;
+    padding: 28px 32px;
+    font-size: 1.15rem;
+    line-height: 1.6;
+    box-shadow: 8px 8px 0 #ff5fa2, 16px 16px 0 #ffd23f;
+    transform: rotate(-1deg);
+    transition: transform 0.3s;
+}
+
+#intro-text:hover {
+    transform: rotate(1deg) scale(1.02);
+}
+
+/* ============ HAMSTERS (shared) ============ */
+
+.hamster {
+    /* the line-art pngs have white backgrounds, multiply makes the white blend into the page */
+    mix-blend-mode: multiply;
+    user-select: none;
+}
+
+#shriveled {
+    width: 200px;
+    height: auto;
+    flex-shrink: 0;
+    transform-origin: bottom center;
+    animation: wiggle 2.5s ease-in-out infinite;
+    cursor: pointer;
+}
+
+@keyframes wiggle {
+    0%, 100% { transform: rotate(-6deg) scaleY(1); }
+    50%      { transform: rotate(6deg) scaleY(1.06); }
+}
+
+/* ============ GALLERY ============ */
+
+#gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 70px;
+}
+
+.painting-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.painting-frame {
+    padding: 18px;
+    background: #fff;
+    border: 4px solid #2b1b4a;
+    border-radius: 12px;
+    box-shadow: 8px 8px 0 #3ec6ff, 16px 16px 0 #8a5cff;
+    transition: transform 0.35s cubic-bezier(.3, 1.8, .5, 1);
+    animation: float 4s ease-in-out infinite;
+}
+
+.painting-row:nth-child(2) .painting-frame {
+    animation-delay: -2s;
+    box-shadow: 8px 8px 0 #ff9f1c, 16px 16px 0 #ff5fa2;
+}
+
+.painting-frame:hover {
+    transform: rotate(-4deg) scale(1.12);
+}
+
+@keyframes float {
+    0%, 100% { translate: 0 0; }
+    50%      { translate: 0 -12px; }
+}
+
+.side-hamster {
+    width: 260px;
+    height: auto;
+}
+
+#thinking {
+    animation: think 3s ease-in-out infinite;
+}
+
+@keyframes think {
+    0%, 100% { transform: translateY(0) rotate(-3deg); }
+    50%      { transform: translateY(-14px) rotate(3deg); }
+}
+
+#writing {
+    transform-origin: bottom center;
+    animation: scribble 0.6s ease-in-out infinite alternate;
+}
+
+@keyframes scribble {
+    from { transform: rotate(-2deg) translateX(-3px); }
+    to   { transform: rotate(2deg)  translateX(3px); }
+}
+
+/* ============ PAINTING INFO CARDS ============ */
+
+.painting-row {
+    max-width: 1150px;
+}
+
+.painting-info {
+    width: 340px;
+    max-width: 100%;
+    background: #fff;
+    border: 4px solid #2b1b4a;
+    border-radius: 20px;
+    padding: 22px 24px;
+    line-height: 1.5;
+    box-shadow: 6px 6px 0 #3ddc84;
+    transition: transform 0.3s;
+}
+
+.info-mondrian {
+    box-shadow: 6px 6px 0 #ffd23f;
+}
+
+.painting-info:hover {
+    transform: rotate(1.5deg) scale(1.03);
+}
+
+.painting-info h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.painting-info .aim {
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+}
+
+.painting-info .facts {
+    list-style: none;
+    margin: 14px 0;
+    padding: 10px 12px;
+    background: #fff3b0;
+    border-radius: 12px;
+    font-size: 0.95rem;
+}
+
+.painting-info .about {
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+}
+
+.painting-info .plan {
+    font-size: 1rem;
+    padding-top: 10px;
+    border-top: 3px dashed #ff5fa2;
+}
+
+/* ============ PAINTING 1 (your original box model code) ============ */
+
+#red-painting {
+    background-color: rgb(211, 25, 12);
+    height: 200px;
+    width: 200px;
+    display:flex;
+    justify-content: center;
+    align-items:last baseline;
+    padding: 10px;
+}
+
+#red-orange {
+    background-color: rgb(157, 29, 13);
+    height: 170px;
+    width: 170px;
+    display:flex;
+    justify-content: center;
+    align-items:last baseline;
+    padding: 5px;
+}
+
+#burgandy {
+    background-color: #800020;
+    height: 140px;
+    width: 140px;
+}
+
+/* ============ PAINTING 2 (your original box model code) ============ */
+
+#white-box {
+    background-color: rgb(208, 204, 204);
+    height: 200px;
+    width: 200px;
+    margin-top: 0; /* was 20px, the frame now handles spacing */
+    border: 0.5px solid black;
+}
+
+#top-box {
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    Height: 70%;
+}
+
+#bottom-box {
+    background-color: rgb(253, 0, 203);
+    width: 100%;
+    Height: 30%;
+    display:flex;
+}
+
+#bottom-left {
+    background-color: rgb(1, 21, 132);
+    width: 32.5%;
+    Height: 100%;
+    border-right: 5px solid black;
+    border-top: 5px solid black;
+}
+
+#bottom-middle {
+    background-color: rgb(242, 243, 237);
+    width: 70%;
+    Height: 100%;
+    display:flex;
+    border-top: 5px solid black;
+}
+
+#bottom-right {
+    background-color: rgb(245, 237, 6);
+    width: 25%;
+    Height: 100%;
+    border-top: 5px solid black;
+    border-left: 5px solid black;
+}
+
+#top-left {
+    background-color: rgb(255, 0, 0);
+    width: 26%;
+    Height: 50%;
+    display:flex;
+    border-right: 5px solid black;
+    border-bottom: 10px solid black;
+}
+
+#top-middle {
+    background-color: rgb(255, 255, 255);
+    width: 26%;
+    Height: 50%;
+    display:flex;
+    border-right: 5px solid black;
+}
+
+/* ============ FINALE ============ */
+
+#finale {
+    margin: 80px auto 20px;
+    text-align: center;
+}
+
+#rainbow-hamster {
+    width: min(560px, 100%);
+    height: auto;
+    border: 4px solid #2b1b4a;
+    border-radius: 28px;
+    box-shadow: 10px 10px 0 #ff5fa2, 20px 20px 0 #ffd23f, 30px 30px 0 #3ec6ff;
+    animation: gallop 1.2s ease-in-out infinite;
+    cursor: pointer;
+}
+
+@keyframes gallop {
+    0%, 100% { transform: translateY(0) rotate(-1deg); }
+    50%      { transform: translateY(-16px) rotate(1deg); }
+}
+
+#finale-caption {
+    margin-top: 50px;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* ============ CONFETTI ============ */
+
+#confetti-layer {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.confetti {
+    position: absolute;
+    top: -20px;
+    width: 12px;
+    height: 12px;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to { transform: translateY(110vh) rotate(720deg); }
+}
+
+/* ============ MOBILE ============ */
+
+@media (max-width: 700px) {
+    body { padding: 20px; }
+    #intro { flex-direction: column; }
+    #shriveled { width: 150px; }
+    .side-hamster { width: 200px; }
+}
+
+/* respect people who don't want motion */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}

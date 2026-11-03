@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model Paintings</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- floating confetti shapes live here (added by script.js) -->
+    <div id="confetti-layer"></div>
+
+    <!-- INTRO TEXT + SHRIVELED HAMSTER -->
+    <header id="intro">
+        <div id="intro-text">
+            <p>
+                Hi ! I wanted to continue practicing using box models to make shapes and used it to recreate the 2 painting I choose.
+                It was really really hard for me because its really tedious and confusing getting to move a shape where you want it and then having to bascially use math to make sure the shapes are the right size.
+                This took longer than it should have but at the end I figured out how to recreate the paintings.
+                Do I see myself using box models again in the future ? Absoulety not I hate them but at least I understand the concept a little bit more after this project :)
+            </p>
+        </div>
+        <img id="shriveled" class="hamster" src="shriveled_hamster.jpeg" alt="A shriveled up hamster">
+    </header>
+
+    <!-- PAINTINGS -->
+    <main id="gallery">
+
+        <!-- Painting 1 + thinking hamster -->
+        <section class="painting-row">
+            <div class="painting-frame">
+                <div id="red-painting">
+                    <div id="red-orange">
+                        <div id="burgandy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <article class="painting-info info-albers">
+                <h2>Geometric Abstraction</h2>
+                <p class="aim">to strip art of all ties to the physical world, turning a painting into a "thing in itself" rather than a copy of external reality</p>
+                <p class="aim">aimed to turn the act of perception itself into the subject of the artwork</p>
+                <ul class="facts">
+                    <li><strong>Artist:</strong> Josef Albers</li>
+                    <li><strong>Title:</strong> Homage to the Square</li>
+                    <li><strong>Date:</strong> 1969</li>
+                    <li><strong>Media:</strong> Oil on Masonite</li>
+                </ul>
+                <p class="about">A famous, decades-long series investigating how adjacent colors optically interact and alter one anothers appearance. Albers used the simple shape of the square to demonstrate that human perception of hue and placement is relative and constantly shifting</p>
+                <p class="plan"><strong>Plan:</strong> Use a box model with different colored content,padding, border increasing in size.</p>
+            </article>
+            <img class="hamster side-hamster" id="thinking" src="Thinking_hamster.jpeg" alt="A hamster thinking hard">
+        </section>
+
+        <!-- Painting 2 + writing hamster -->
+        <section class="painting-row">
+            <img class="hamster side-hamster" id="writing" src="Hamster_doodle_locking_in.jpeg" alt="A hamster with glasses writing in a notebook">
+            <div class="painting-frame">
+                <div id="white-box">
+                    <div id="top-box">
+                        <div id="top-left"></div>
+                        <div id="top-middle"></div>
+                    </div>
+
+                    <div id="bottom-box">
+                        <div id="bottom-left"></div>
+                        <div id="bottom-middle"></div>
+                        <div id="bottom-right"></div>
+                    </div>
+                </div>
+            </div>
+            <article class="painting-info info-mondrian">
+                <h2>Neoplasticism</h2>
+                <p class="aim">Artists sought pure abstraction by reducing art to its most essential elements: straight lines, right angles, primary colors and neutral tones</p>
+                <p class="aim">aimed to create a universal visual language that could bring order to the world following the chaos of World War I</p>
+                <ul class="facts">
+                    <li><strong>Artist:</strong> Piet Mondrian</li>
+                    <li><strong>Title:</strong> Composition No. IV, with Red, Blue and Yellow</li>
+                    <li><strong>Date:</strong> 1929</li>
+                    <li><strong>Media:</strong> Oil painting</li>
+                </ul>
+                <p class="about">An abstract oil painting utilizing primary colors red,yellow and blue. Mondrian used only straight vertical and horizontal black lines to form a grid believing it expressed a spiritual balance and order common to all people.</p>
+                <p class="plan"><strong>Plan:</strong> Use box model border width for black grids and content as color</p>
+            </article>
+        </section>
+
+    </main>
+
+    <!-- RAINBOW HAMSTER AT THE BOTTOM -->
+    <footer id="finale">
+        <img id="rainbow-hamster" src="___1_.jpeg" alt="A hamster riding a unicorn under a rainbow">
+        <p id="finale-caption">(click anywhere for confetti!)</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
